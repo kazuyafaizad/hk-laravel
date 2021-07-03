@@ -18,7 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');;
 
 require __DIR__.'/auth.php';
