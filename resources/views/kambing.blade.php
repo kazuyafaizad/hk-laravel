@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
 
 <head>
   <meta charset="utf-8">
@@ -62,7 +62,7 @@
 
       <!-- <h1 class="logo me-auto me-lg-0"><a href="index.html">Husna Kitchen</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo me-auto me-lg-0" ><img src="Restaurantly/assets/img/logo.png" alt="" class="img-fluid masuk-logo" ></a>
+      <a href="index.php" class="logo me-auto me-lg-0" ><img src="Restaurantly/assets/img/logo.png" alt="" class="img-fluid masuk-logo" ></a>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -73,7 +73,7 @@
           <li><a class="nav-link scrollto" href="#events">Events</a></li>
           <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -89,12 +89,12 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+      <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a> -->
 
     </div>
   </header><!-- End Header -->
@@ -106,11 +106,11 @@
         <div class="col-lg-8">
           <h1>Welcome to <span>Kambing Bakar Pilah</span></h1>
           <h2>The best kambing bakar ! #sekalighasonaklaie</h2>
-
+<!-- 
           <div class="btns">
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
             <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
-          </div>
+          </div> -->
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
           <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
@@ -150,7 +150,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <!-- <section id="why-us" class="why-us">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -187,7 +187,8 @@
         </div>
 
       </div>
-    </section><!-- End Why Us Section -->
+    </section> -->
+    <!-- End Why Us Section -->
 
     <!-- ======= Menu Section ======= -->
     <section id="menu" class="menu section-bg">
@@ -195,21 +196,52 @@
 
         <div class="section-title">
           <h2>Menu</h2>
-          <p>Check Our Tasty Menu</p>
+          <p>Menu Lazat Kami</p>
         </div>
-
+     
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="menu-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-starters">Starters</li>
+               <li data-filter="*" class="filter-active">All</li>
+              <!--<li data-filter=".filter-starters">Starters</li>
               <li data-filter=".filter-salads">Salads</li>
-              <li data-filter=".filter-specialty">Specialty</li>
+              <li data-filter=".filter-specialty">Specialty</li> -->
+              
+              @foreach($category as $row)
+              <li data-filter=".filter-{{$row}}">{{ucfirst($row)}}</li> 
+              @endforeach
             </ul>
           </div>
         </div>
-
+  
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+     
+        @foreach($menu as $row)
+
+        
+
+        <div class="col-lg-6 menu-item filter-{{$row['menu_category']}}">
+            <img src="Restaurantly/assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="/menu/1">{{$row['menu_name']}}</a><span>{{$row['menu_price']}}</span>
+            </div>
+            <div class="menu-ingredients">
+            {{$row['menu_description']}}
+            </div>
+          </div>
+
+
+        @endforeach
+
+        <!-- <div class="col-lg-6 menu-item filter-kambing">
+            <img src="Restaurantly/assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="/menu/1">Kambing Bakar lover</a><span>$5.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Lorem, deren, trataro, filede, nerada
+            </div>
+          </div>
 
           <div class="col-lg-6 menu-item filter-starters">
             <img src="Restaurantly/assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
@@ -301,7 +333,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Menu Section -->
@@ -312,36 +344,39 @@
 
         <div class="section-title">
           <h2>Specials</h2>
-          <p>Check Our Specials</p>
+          <p>Cuba Menu Special Kami!</p>
         </div>
 
+      
+
+    
+ 
+
+
+
+
         <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+       
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
+            @foreach($menu as $index => $row)
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+                <a class="nav-link @if($index==0) active show @endif" data-bs-toggle="tab" href="#tab-{{$row['menu_id']}}">{{$row['menu_name']}}</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
-              </li>
+              @endforeach
             </ul>
           </div>
+        
+
           <div class="col-lg-9 mt-4 mt-lg-0">
             <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
+            @foreach($menu as $index => $row)   
+              <div class="tab-pane @if($index==0) active show @endif" id="tab-{{$row['menu_id']}}">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Architecto ut aperiam autem id</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                    <h3>{{$row['menu_name']}}</h3>
+                    <p class="fst-italic">{{$row['menu_description']}}</p>
                     <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -349,7 +384,8 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-2">
+              @endforeach
+              <!-- <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Et blanditiis nemo veritatis excepturi</h3>
@@ -385,6 +421,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="tab-pane" id="tab-5">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
@@ -396,7 +433,8 @@
                     <img src="Restaurantly/assets/img/specials-5.png" alt="" class="img-fluid">
                   </div>
                 </div>
-              </div>
+              </div> -->
+
             </div>
           </div>
         </div>
@@ -507,7 +545,7 @@
    
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <!-- <section id="testimonials" class="testimonials section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -529,7 +567,7 @@
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -542,7 +580,7 @@
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -555,7 +593,7 @@
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -568,7 +606,7 @@
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -581,14 +619,15 @@
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section> -->
+    <!-- End Testimonials Section -->
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
@@ -689,7 +728,7 @@
               <img src="Restaurantly/assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Walter White</h4>
+                  <h4>Acap</h4>
                   <span>Master Chef</span>
                 </div>
                 <div class="social">
@@ -702,7 +741,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
+          <!-- <div class="col-lg-4 col-md-6">
             <div class="member" data-aos="zoom-in" data-aos-delay="200">
               <img src="Restaurantly/assets/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
               <div class="member-info">
@@ -718,9 +757,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-lg-4 col-md-6">
+          <!-- <div class="col-lg-4 col-md-6">
             <div class="member" data-aos="zoom-in" data-aos-delay="300">
               <img src="Restaurantly/assets/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
               <div class="member-info">
@@ -736,7 +775,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
@@ -840,8 +879,7 @@
               <!-- <h3>Husna Kitchen</h3> -->
               <img src="Restaurantly/assets/img/logo.png" alt="" class="img-fluid" style="margin-left: -20px;" >
               <p>
-                No.42-G, Jalan 5, Pusat Komersial Melang,<br>
-                72000 Kuala Pilah, Negeri Sembilan<br><br>
+                No. 73, Lorong TBD 2/2, Taman Bahagia Delima, <br>72000 Kuala Pilah, Negeri Sembilan.<br><br>
                 <strong>Phone:</strong> +6013-607 2728<br>
                 <strong>Email:</strong> kambingperapilah@gmail.com<br>
               </p>
@@ -866,7 +904,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <!-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -875,16 +913,16 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
-          </div>
+          </div> -->
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
 
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -920,4 +958,4 @@
 
 </body>
 
-</html>
+

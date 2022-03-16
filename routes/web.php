@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return \File::get(public_path() . '/Restaurantly/index.html');
-});
+// Route::get('/', function () {
+//     return \File::get(public_path() . '/Restaurantly/index.php');
+// });
+
+
+
+Route::get('/',[App\Http\Controllers\KambingController::class, 'index'])->name('index');
 
 Route::get('/dashboard', function () {
     return view('home');
