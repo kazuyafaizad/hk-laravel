@@ -223,7 +223,7 @@
         <div class="col-lg-6 menu-item filter-{{$row['menu_category']}}">
             <img src="Restaurantly/assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
             <div class="menu-content">
-              <a href="/menu/1">{{$row['menu_name']}}</a><span>{{$row['menu_price']}}</span>
+              <a href="/menu/1">{{str_replace("_"," ",$row['menu_name'])}}</a><span>{{$row['menu_price']}}</span>
             </div>
             <div class="menu-ingredients">
             {{$row['menu_description']}}
