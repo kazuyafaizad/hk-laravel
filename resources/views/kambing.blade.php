@@ -208,7 +208,7 @@
               <li data-filter=".filter-specialty">Specialty</li> -->
               
               @foreach($category as $row)
-              <li data-filter=".filter-{{$row}}">{{ucfirst($row)}}</li> 
+              <li data-filter=".filter-{{$row}}">{{ucfirst(str_replace("_"," ",$row))}}</li> 
               @endforeach
             </ul>
           </div>
