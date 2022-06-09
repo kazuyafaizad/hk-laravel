@@ -362,7 +362,7 @@
             <ul class="nav nav-tabs flex-column">
             @foreach($menu as $index => $row)
               <li class="nav-item">
-                <a class="nav-link @if($index==0) active show @endif" data-bs-toggle="tab" href="#tab-{{$row['menu_id']}}">{{$row['menu_name']}}</a>
+                <a class="nav-link @if($index==0) active show @endif" data-bs-toggle="tab" href="#tab-{{$row['menu_id']}}">{{ str_replace("_"," ",$row['menu_name'])}}</a>
               </li>
               @endforeach
             </ul>
