@@ -13,8 +13,9 @@ class KambingController extends Controller
     {
 
         $menu = Menu::all();
+        $menu_special = Menu::where('special','YES')->get();
         $category = Menu::all()->pluck('menu_category')->unique();
 
-        return view('kambing')->with(['menu'=>$menu,'category'=>$category]);
+        return view('kambing')->with(['menu'=>$menu,'menu_special'=>$menu_special,'category'=>$category]);
     }
 }

@@ -233,107 +233,7 @@
 
         @endforeach
 
-        <!-- <div class="col-lg-6 menu-item filter-kambing">
-            <img src="Restaurantly/assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="/menu/1">Kambing Bakar lover</a><span>$5.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="Restaurantly/assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="/menu/1">Kambing Bakar</a><span>$5.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="Restaurantly/assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Bread Barrel</a><span>$6.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="Restaurantly/assets/img/menu/cake.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Crab Cake</a><span>$7.95</span>
-            </div>
-            <div class="menu-ingredients">
-              A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <img src="Restaurantly/assets/img/menu/caesar.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Caesar Selections</a><span>$8.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="Restaurantly/assets/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Tuscan Grilled</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="Restaurantly/assets/img/menu/mozzarella.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Mozzarella Stick</a><span>$4.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <img src="Restaurantly/assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Greek Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach, crisp romaine, tomatoes, and Greek olives
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <img src="Restaurantly/assets/img/menu/spinach-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Spinach Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="Restaurantly/assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Lobster Roll</a><span>$12.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-            </div>
-          </div>
-
-        </div> -->
+        
 
       </div>
     </section><!-- End Menu Section -->
@@ -360,7 +260,7 @@
        
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
-            @foreach($menu as $index => $row)
+            @foreach($menu_special as $index => $row)
               <li class="nav-item">
                 <a class="nav-link @if($index==0) active show @endif" data-bs-toggle="tab" href="#tab-{{$row['menu_id']}}">{{ str_replace("_"," ",$row['menu_name'])}}</a>
               </li>
@@ -376,8 +276,8 @@
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>{{$row['menu_name']}}</h3>
-                    <p class="fst-italic">{{$row['menu_description']}}</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    <p class="fst-italic">RM {{$row['menu_price']}}</p>
+                    <p>{{$row['menu_description']}}</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="Restaurantly/assets/img/specials-1.png" alt="" class="img-fluid">
@@ -385,55 +285,7 @@
                 </div>
               </div>
               @endforeach
-              <!-- <div class="tab-pane" id="tab-2">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Et blanditiis nemo veritatis excepturi</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Restaurantly/assets/img/specials-2.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Restaurantly/assets/img/specials-3.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Restaurantly/assets/img/specials-4.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-
-              <div class="tab-pane" id="tab-5">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Restaurantly/assets/img/specials-5.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div> -->
+          
 
             </div>
           </div>
@@ -448,7 +300,7 @@
 
         <div class="section-title">
           <h2>Events</h2>
-          <p>Organize Your Events in our Restaurant</p>
+          <p>Menerima tempahan untuk majlis anda</p>
         </div>
 
         <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
@@ -460,9 +312,9 @@
                   <img src="Restaurantly/assets/img/event-birthday.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Birthday Parties</h3>
+                  <h3>Majlis Kenduri</h3>
                   <div class="price">
-                    <p><span>$189</span></p>
+                    <p><span></span></p>
                   </div>
                   <p class="fst-italic">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -487,9 +339,9 @@
                   <img src="Restaurantly/assets/img/event-private.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Private Parties</h3>
+                  <h3>Majlis Aqiqah</h3>
                   <div class="price">
-                    <p><span>$290</span></p>
+                    <p><span></span></p>
                   </div>
                   <p class="fst-italic">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -514,9 +366,9 @@
                   <img src="Restaurantly/assets/img/event-custom.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Custom Parties</h3>
+                  <h3>Rumah Terbuka</h3>
                   <div class="price">
-                    <p><span>$99</span></p>
+                    <p><span></span></p>
                   </div>
                   <p class="fst-italic">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -725,7 +577,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <img src="Restaurantly/assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+              <img src="Restaurantly/assets/img/chefs/tokey.jpeg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Acap</h4>
